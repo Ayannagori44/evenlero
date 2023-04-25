@@ -30,6 +30,7 @@ body.light {
   --white: #ffffff;
   --grey1: #f0f0ee;
   --grey2: #e1e1e1;
+  --grey3: #aaa;
   --green: #29d697;
 }
 
@@ -49,11 +50,11 @@ h2 {
 }
 
 h3 {
-  font-style: 1.8rem;
+  font-size: 1.6rem;
 }
 
 h4 {
-  font-style: 1.4rem;
+  font-size: 1rem;
 }
 
 p {
@@ -77,36 +78,44 @@ p {
   justify-content: center;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  text-transform: uppercase;
+  border: none;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: 0.3s;
 }
-button:hover {
-  border-color: #646cff;
-}
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
+}
+
+.btn {
+  background: var(--dark);
+  color: var(--white);
+  padding: 0.8rem 1.6rem;
+  border-radius: 1rem;
+  opacity: 0.9;
 }
 
 img {
   height: 100%;
   width: auto;
+}
+
+.smooth-transition {
+  transition: 0.3s ease-in-out;
+}
+
+input,
+label,
+textarea {
+  display: block;
+  resize: none;
+}
+
+.hidden {
+  opacity: 0;
 }

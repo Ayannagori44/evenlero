@@ -2,10 +2,11 @@ import "./Home.scss";
 import { BiSearch } from "react-icons/bi";
 import { CiFilter } from "react-icons/ci";
 import { MdLocationOn } from "react-icons/md";
-// import EventCard from "../Ui/Components/EventCard";
+import EventCard from "../../Ui/Components/EventCard/EventCard";
+import { categories } from "../../Utils/constant";
+import CategoryCard from "../../Ui/Components/CategoryCard/CategoryCard";
+
 // import EventCardHorizontal from "../Ui/Components/EventCardHorizontal";
-// import CategoryCard from "../Ui/Components/CategoryCard";
-// import { categories } from "../Utils/constant";
 
 const Home = () => {
   return (
@@ -17,23 +18,21 @@ const Home = () => {
             <img src="https://picsum.photos/300/300" />
           </div>
           <div className="content">
-            <h3>Hi, Welcome👋🏻</h3>
-            <h2>Ayan</h2>
+            <h4>Hi, Welcome👋🏻</h4>
+            <h3>Ayan Nagori</h3>
           </div>
         </div>
 
         <div className="nav-right">
-          <h3 className="text-xs font-[200] text-white">Current Location</h3>
-          <h2>
+          <h4>Current Location</h4>
+          <h3>
             Basni, 230485
-            <span>
-              <MdLocationOn style={{ fill: "red" }} />
-            </span>
-          </h2>
+            <MdLocationOn style={{ fill: "red", marginLeft: ".3rem" }} />
+          </h3>
         </div>
       </nav>
 
-      <div className="form-container container">
+      <section className="form-container container">
         <form className="flex">
           <button
             type="submit"
@@ -41,39 +40,67 @@ const Home = () => {
               e.preventDefault();
               console.log("sumbit");
             }}
-            className="btn bg btn-square bg-transparent"
+            className="center"
           >
             <BiSearch style={{ fill: "white", fontSize: "2rem" }} />
           </button>
-          <input
-            type="text"
-            placeholder="Search…"
-            className="input input-bordered bg-transparent px-2 text-white"
-          />
+          <input type="text" placeholder="Find Amazing Events" />
         </form>
-        <button className="center">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            console.log("Filter");
+          }}
+          className="center"
+        >
           <CiFilter style={{ fill: "white", fontSize: "2rem" }} />
         </button>
-      </div>
+      </section>
 
-      {/*
-      <h1 className="mb-3 text-lg font-bold text-white">Popular Events 🔥</h1>
-      <div className="hide-scrollbar mb-5 flex overflow-x-scroll px-0.5 py-1">
-        <EventCard />
-        <EventCard />
-        <EventCard />
-      </div>
+      <section className="container">
+        <div className="title-bar flex">
+          <h2>Popular Events 🔥</h2>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("Veiw all");
+            }}
+          >
+            Veiw all
+          </button>
+        </div>
 
-      <h1 className="my-3 text-lg font-bold">Choose By Category ✨</h1>
-      <div className="hide-scrollbar mb-5 flex overflow-x-scroll">
-        {categories.map((cate, i) => (
-          <CategoryCard key={i} active={i === 0 ? true : false} title={cate} />
-        ))}
-      </div>
+        <div className="event-card-container">
+          <EventCard />
+          <EventCard />
+        </div>
 
-      <div>
+        <div className="title-bar dark flex">
+          <h2>Choose By Category ✨</h2>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("Veiw all");
+            }}
+          >
+            Veiw all
+          </button>
+        </div>
+
+        <div className="category-card-container">
+          {categories.map((cate, i) => (
+            <CategoryCard
+              key={i}
+              active={i === 0 ? true : false}
+              title={cate}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* <div>
         <EventCardHorizontal />
-      </div> */}
+      </div>  */}
     </section>
   );
 };

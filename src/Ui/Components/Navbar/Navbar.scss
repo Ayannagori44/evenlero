@@ -1,0 +1,17 @@
+.event__navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0 2rem;
+
+  .back-arrow-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .main__title {
+    text-align: center;
+    font-weight: bold;
+  }
+}

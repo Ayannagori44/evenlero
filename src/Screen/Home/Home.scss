@@ -39,7 +39,8 @@ nav {
   .content {
     margin-left: 1rem;
     color: var(--grey1);
-    h3 {
+    h4 {
+      margin-bottom: 0.3rem;
       opacity: 0.8;
     }
   }
@@ -50,15 +51,14 @@ nav {
     flex-direction: column;
     color: var(--grey1);
 
-    h3 {
+    h4 {
       margin-bottom: 0.5rem;
       opacity: 0.8;
     }
 
-    h2 {
+    h3 {
       display: flex;
       align-items: center;
-      font-size: 1.8rem;
     }
   }
 }
@@ -83,15 +83,17 @@ nav {
       background: transparent;
       border-radius: 1rem;
       height: 100%;
+      padding: 0 0.6rem;
     }
 
     input {
       background: transparent;
       padding: 0 1rem;
-      color: var(--grey1);
+      color: var(--grey2);
       border: 0;
       outline: 0;
       flex: 1;
+      font-size: 1.4rem;
     }
   }
 
@@ -100,5 +102,39 @@ nav {
     border-radius: 1rem;
     width: 4.5rem;
     height: 4.5rem;
+  }
+}
+
+.title-bar {
+  margin: 3rem 0 2rem !important;
+  justify-content: space-between;
+
+  h2 {
+    color: var(--grey1);
+  }
+
+  button {
+    background: transparent;
+    font-size: 1.2rem;
+    color: var(--primary);
+  }
+}
+
+.title-bar.dark {
+  h2 {
+    color: var(--soft-dark);
+  }
+}
+
+.event-card-container,
+.category-card-container {
+  margin-bottom: 1rem !important;
+  display: flex;
+  overflow-x: scroll;
+
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
